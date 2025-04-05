@@ -1,5 +1,5 @@
 {
-	"name": "@nathanielks/express-api",
+	"name": "@nathanielks/express-todo-api",
 	"type": "module",
 	"version": "0.0.1",
 	"main": "index.js",

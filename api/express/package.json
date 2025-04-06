@@ -2,12 +2,22 @@
 	"name": "@nathanielks/express-todo-api",
 	"type": "module",
 	"version": "0.0.1",
-	"main": "index.js",
+	"main": "src/index.ts",
 	"scripts": {
 		"build": "swc src --out-dir dist",
-		"start": "pnpm build && node dist/src/index.js",
+		"start": "ts-node-esm src/index.ts",
+		"watch": "pnpm exec nodemon",
 		"lint": "npx @biomejs/biome lint ./src",
 		"fix": "npx @biomejs/biome check --write ./src"
+	},
+	"nodemonConfig": {
+		"watch": [
+			"src"
+		],
+		"ext": "ts",
+		"execMap": {
+			"ts": "node --no-warnings=ExperimentalWarning --loader ts-node/esm"
+		}
 	},
 	"keywords": [],
 	"author": "",
@@ -22,7 +32,12 @@
 		"typescript": "catalog:"
 	},
 	"dependencies": {
-		"express": "^5.1.0"
+		"@types/body-parser": "^1.19.5",
+		"body-parser": "^2.2.0",
+		"express": "^5.1.0",
+		"nodemon": "^3.1.9",
+		"ts-node": "^10.9.2",
+		"ulid": "catalog:"
 	},
 	"packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808"
 }

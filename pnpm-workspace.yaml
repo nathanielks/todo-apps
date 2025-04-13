@@ -10,4 +10,5 @@ catalog:
   "@swc/cli": "^0.6.0"
   "@swc/core": "^1.11.16"
   "typescript": "^5.8.2"
+  "tsx": "^4.19.3"
   "ulid": "^3.0.0"

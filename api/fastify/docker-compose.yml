@@ -1,0 +1,14 @@
+# https://github.com/joist-orm/joist-sample/blob/main/docker-compose.yml
+version: "3.1"
+
+services:
+  db:
+    build:
+      context: ./
+      dockerfile: db.dockerfile
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: pg_isready
+      interval: 1s
+      retries: 10

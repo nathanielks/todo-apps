@@ -11,7 +11,8 @@ export function up(b: MigrationBuilder): void {
 	createCreatedAtFunction(b);
 
 	createEntityTable(b, "users", {
+		email: { type: "varchar(255)", notNull: true },
 		// username: { type: "varchar(255)", notNull: true },
-		password: { type: "varchar(255)", notNull: true },
+		// password: { type: "varchar(255)", notNull: true },
 	});
 }

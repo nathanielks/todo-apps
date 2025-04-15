@@ -1,13 +1,13 @@
-import { test } from "node:test";
+import { test } from "vitest";
 import * as assert from "node:assert";
 import { build } from "../helper.js";
 
-test("lists todos", async (t) => {
-  const app = await build(t);
+test("lists todos", async () => {
+	const app = await build();
 
-  const res = await app.inject({
-    url: "/todos/",
-  });
+	const res = await app.inject({
+		url: "/todos/",
+	});
 
-  assert.equal(res.payload, "[]");
+	assert.equal(res.payload, "[]");
 });

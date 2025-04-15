@@ -1,12 +1,8 @@
 // This file contains code that we reuse between our tests.
 import helper from "fastify-cli/helper.js";
-import type * as test from "node:test";
+import { afterEach } from "vitest";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-
-export type TestContext = {
-	after: typeof test.after;
-};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +17,7 @@ function config() {
 }
 
 // Automatically build and tear down our instance
-async function build(t: TestContext) {
+async function build() {
 	// you can set all the options supported by the fastify CLI command
 	const argv = [AppPath];
 
@@ -32,7 +28,7 @@ async function build(t: TestContext) {
 
 	// Tear down our app after we are done
 	// eslint-disable-next-line no-void
-	t.after(() => void app.close());
+	afterEach(() => void app.close());
 
 	return app;
 }

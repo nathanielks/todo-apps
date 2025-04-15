@@ -29,7 +29,7 @@ import {
   type ValueFilter,
   type ValueGraphQLFilter,
 } from "joist-orm";
-import { type Entity, EntityManager, newUser, User, userMeta } from "../entities";
+import { type Entity, EntityManager, newUser, User, userMeta } from "../entities.js";
 
 export type UserId = Flavor<string, "User">;
 

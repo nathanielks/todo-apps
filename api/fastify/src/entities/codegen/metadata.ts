@@ -1,6 +1,6 @@
 import { configureMetadata, DateSerde, type Entity as Entity2, EntityManager as EntityManager1, type EntityMetadata, KeySerde, PrimitiveSerde, setRuntimeConfig } from "joist-orm";
-import { User } from "../User";
-import { newUser, userConfig } from "../entities";
+import { User } from "../User.js";
+import { newUser, userConfig } from "../entities.js";
 
 setRuntimeConfig({ temporal: false });
 

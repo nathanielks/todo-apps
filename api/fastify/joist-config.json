@@ -1,0 +1,1 @@
+{ "entities": { "User": { "tag": "u" } }, "entitiesDirectory": "./src/entities", "version": "1.235.0" }
